@@ -5,7 +5,7 @@ const [Menu, setMenu] = useState(null);
 
 useEffect(() => {
 // Fetch Menu data from local server
-fetch(`http://localhost:3001/menus/${MenuId}`)
+fetch(`http://localhost:6001/Menu/${MenuId}`)
 .then(response => response.json())
 .then(data => setMenu(data))
 .catch(error => console.error("Error fetching menu data:", error));

@@ -1,53 +1,3 @@
-// import React, { useState } from "react";
-
-// function MenuCard({ Menu, setMenu}) {
-// const [isordered, setisordered] = useState(false);
-
-// const handleStockToggle = () => {
-// const updatedStockStatus = !isordered;
-// setisordered(updatedStockStatus);
-// fetch(`http://localhost:6001/plants/${Menu.id}`, {
-// method: "PATCH",
-// headers: { "Content-Type": "application/json" },
-// body: JSON.stringify({ isordered: updatedStockStatus })
-// })
-// .then(response => response.json())
-// .then(updatedMenu => {
-// setMenu(prev =>
-// prev.map((p) => (p.id === Menu.id ? updatedMenu : p))
-// );
-// })
-// };
-
-// return (
-// <li className="card" data-testid={`Menu-item-${Menu.id}`}>
-// <img src={Menu.image || "https://via.placeholder.com/400"} alt={Menu.name} />
-// <h4>{Menu.name}</h4>
-// <p>Price: ${Menu.price}</p>
-// <div className="extra content">
-// {showDetails ? <MenuDetails Menu={Menu} /> : null}
-
-// <button className="button" onClick={handleDetailsClick}>
-// {showDetails ? "Less Info" : "More Info"}
-// </button>
-// <button className="button" onClick={() => setIsHidden(true)}>
-// Hide Me{" "}
-// </button>
-// </div>
-// <div>
-// <button 
-// onClick={handleStockToggle} 
-// className={isordered? "Order Now!" : "Ordered"}
-// >
-// {isordered? "Order Now!" : "Ordered"} 
-// </button>
-// </div>
-// </li>
-// );
-// }
-
-// export default MenuCard;
-
 import React, { useState } from "react";
 
 function MenuCard({ Menu, setMenu }) {
@@ -58,7 +8,7 @@ const [isHidden, setIsHidden] = useState(false); // State for hiding the card
 const handleStockToggle = () => {
 const updatedStockStatus = !isordered;
 setisordered(updatedStockStatus);
-fetch(`http://localhost:6001/plants/${Menu.id}`, {
+fetch(`http://localhost:6001/Menu/${Menu.id}`, {
 method: "PATCH",
 headers: { "Content-Type": "application/json" },
 body: JSON.stringify({ isordered: updatedStockStatus })
