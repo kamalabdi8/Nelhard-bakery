@@ -1,14 +1,21 @@
-import './App.css';
-import { Route, Routes } from 'react-router-dom';
-import Food from './components/Food';
-import Recipe from './components/Recipe';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom'; 
+import Navbar from './components/Navbar'; 
+import Home from './Pages/Home'; 
+import SignIn from './Pages/SignIn'; 
+import SignUp from './Pages/SignUp'; 
+import './App.css'; 
 
-function App() { 
+function App() {
   return (
-    <Routes>
-      <Route path='/' element={<Food />} />
-      <Route path='/:mealid' element={<Recipe />} />
-    </Routes>
+    <>
+      <Navbar /> {}
+      <Routes> {}
+        <Route path="/" element={<Home />} /> {}
+        <Route path="/signin" element={<SignIn />} /> {}
+        <Route path="/signup" element={<SignUp />} /> {}
+      </Routes>
+    </>
   );
 }
 

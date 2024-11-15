@@ -1,0 +1,93 @@
+
+.home-container {
+  padding: 20px;
+  text-align: center;
+}
+
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 60%;
+  padding: 12px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin: 0 auto;
+  display: block;
+}
+
+
+.meal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+
+.meal-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.meal-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.meal-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.meal-info {
+  padding: 15px;
+}
+
+.meal-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.meal-link {
+  font-size: 1.1rem;
+  color: #f39c12;
+  text-decoration: none;
+}
+
+.meal-link:hover {
+  text-decoration: underline;
+}
+
+
+.no-meals {
+  font-size: 1.3rem;
+  color: #777;
+  margin-top: 20px;
+}
+
+
+.loading, .error {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #e74c3c;
+  margin-top: 50px;
+}
