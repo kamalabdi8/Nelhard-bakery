@@ -35,6 +35,56 @@ h1 {
   margin-top: 20px;
 }
 
+/* Styling for the Add to Cart button */
+.add-to-cart-button {
+  background-color: #ff5722;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-to-cart-button:hover {
+  background-color: #e64a19;
+}
+
+.meal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.meal-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.meal-image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.meal-info {
+  margin-top: 10px;
+}
+
+.meal-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.meal-link {
+  text-decoration: none;
+  color: #ff5722;
+}
+
+.meal-link:hover {
+  color: #e64a19;
+}
+
 
 .meal-card {
   background-color: #fff;

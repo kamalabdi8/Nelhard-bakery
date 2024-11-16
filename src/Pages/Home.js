@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Home.css';
-import Navbar from '../components/Navbar'; 
 
-const Home = () => {
-  const [query, setQuery] = useState(''); 
-  const [meals, setMeals] = useState([]); 
-  const [loading, setLoading] = useState(false); 
+const Home = ({ addToCart }) => {
+  const [query, setQuery] = useState('');
+  const [meals, setMeals] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
 
   const fetchMeals = async (searchQuery) => {
     setLoading(true);
-    setError(null); 
+    setError(null);
 
     try {
-      const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`);
+      const response = await axios.get(
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`
+      );
       if (response.data.meals) {
-        setMeals(response.data.meals); 
+        setMeals(response.data.meals);
       } else {
         setMeals([]);
       }
@@ -28,24 +28,21 @@ const Home = () => {
     }
   };
 
-
   useEffect(() => {
     if (query === '') {
-      setMeals([]); 
+      setMeals([]);
     } else {
-      fetchMeals(query); 
+      fetchMeals(query);
     }
-  }, [query]); 
+  }, [query]);
 
-  
   const handleSearchChange = (event) => {
-    setQuery(event.target.value); 
+    setQuery(event.target.value);
   };
 
   return (
     <div className="home-container">
       <h1>Search for a Meal</h1>
-
 
       <div className="search-bar">
         <input
@@ -57,11 +54,8 @@ const Home = () => {
         />
       </div>
 
-
       {loading && <div className="loading">Loading...</div>}
-
       {error && <div className="error">{error}</div>}
-
 
       {meals.length > 0 ? (
         <div className="meal-grid">
@@ -82,6 +76,12 @@ const Home = () => {
                 >
                   View Recipe
                 </a>
+                <button
+                  onClick={() => addToCart(meal)}
+                  className="add-to-cart-button"
+                >
+                  Add to Cart
+                </button>
               </div>
             </div>
           ))}
